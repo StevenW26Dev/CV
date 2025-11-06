@@ -1,110 +1,119 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portafolio - Jorge Estiben Walteros Espinosa</title>
+  <meta charset="UTF-8" /> <!-- Define la codificación de caracteres del documento -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Hace que la página sea responsiva en dispositivos móviles -->
+  <title>Portafolio - Jorge Estiben Walteros Espinosa</title> <!-- Título de la pestaña del navegador -->
 
   <style>
+    /* Importa la fuente Poppins desde Google Fonts */
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
+    /* Reset básico para todos los elementos */
     * {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
+      box-sizing: border-box; /* Incluye padding y border dentro del ancho y alto */
     }
 
+    /* Estilos generales del body */
     body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #1b263b, #415a77);
-      color: #e0e1dd;
-      overflow-x: hidden;
+      font-family: 'Poppins', sans-serif; /* Fuente principal */
+      background: linear-gradient(135deg, #1b263b, #415a77); /* Fondo degradado */
+      color: #e0e1dd; /* Color de texto principal */
+      overflow-x: hidden; /* Evita scroll horizontal */
     }
 
+    /* Estilos del encabezado principal */
     header {
       text-align: center;
-      padding: 80px 20px;
-      animation: fadeIn 1.5s ease;
+      padding: 80px 20px; /* Espaciado interno */
+      animation: fadeIn 1.5s ease; /* Animación de aparición */
     }
 
     header h1 {
-      font-size: 2.8em;
+      font-size: 2.8em; /* Tamaño del título */
       margin-bottom: 10px;
-      color: #ffffff;
+      color: #ffffff; /* Color del título */
     }
 
     header p {
-      color: #a9bcd0;
+      color: #a9bcd0; /* Color del subtítulo */
       font-size: 1.1em;
     }
 
+    /* Estilos del menú de navegación */
     nav {
-      background: rgba(0, 0, 0, 0.3);
+      background: rgba(0, 0, 0, 0.3); /* Fondo semitransparente */
       text-align: center;
       padding: 10px 0;
-      position: sticky;
+      position: sticky; /* Permanece visible al hacer scroll */
       top: 0;
-      z-index: 10;
-      backdrop-filter: blur(6px);
+      z-index: 10; /* Para que esté sobre otros elementos */
+      backdrop-filter: blur(6px); /* Efecto de desenfoque del fondo */
     }
 
     nav a {
-      color: #e0e1dd;
-      text-decoration: none;
-      margin: 0 15px;
+      color: #e0e1dd; /* Color de enlaces */
+      text-decoration: none; /* Sin subrayado */
+      margin: 0 15px; /* Espaciado entre enlaces */
       font-weight: 500;
-      transition: color 0.3s;
+      transition: color 0.3s; /* Animación al cambiar color */
     }
 
     nav a:hover {
-      color: #a9bcd0;
+      color: #a9bcd0; /* Color al pasar el mouse */
     }
 
+    /* Estilos generales de las secciones */
     section {
-      max-width: 1100px;
-      margin: 60px auto;
-      padding: 0 20px;
-      animation: slideUp 1s ease;
+      max-width: 1100px; /* Máximo ancho */
+      margin: 60px auto; /* Centrado horizontal y margen superior/inferior */
+      padding: 0 20px; /* Padding lateral */
+      animation: slideUp 1s ease; /* Animación de subida al aparecer */
     }
 
     h2 {
-      border-left: 5px solid #1b4965;
-      padding-left: 10px;
-      color: #f6f9fa;
-      margin-bottom: 20px;
+      border-left: 5px solid #1b4965; /* Línea decorativa a la izquierda */
+      padding-left: 10px; 
+      color: #f6f9fa; 
+      margin-bottom: 20px; 
     }
 
+    /* Grid para las tarjetas */
     .tarjetas {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajusta el número de columnas según el ancho disponible */
+      gap: 25px; /* Espacio entre tarjetas */
     }
 
+    /* Estilos de cada tarjeta */
     .card {
-      background: #e0e1dd;
-      color: #1b263b;
-      border-radius: 15px;
+      background: #e0e1dd; /* Fondo de la tarjeta */
+      color: #1b263b; /* Color del texto */
+      border-radius: 15px; /* Bordes redondeados */
       padding: 25px;
       text-align: center;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Sombra */
+      transition: transform 0.3s, box-shadow 0.3s; /* Animación al hacer hover */
     }
 
     .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      transform: translateY(-10px); /* Levanta la tarjeta al pasar el mouse */
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4); /* Sombra más grande */
     }
 
     .card h3 {
       margin-bottom: 10px;
-      color: #1b4965;
+      color: #1b4965; 
     }
 
     .card p {
-      color: #333;
+      color: #333; 
       font-size: 0.95em;
     }
 
+    /* Estilos del pie de página */
     footer {
       background: rgba(0, 0, 0, 0.3);
       text-align: center;
@@ -113,16 +122,19 @@
       font-size: 0.9em;
     }
 
+    /* Animación para fadeIn */
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
 
+    /* Animación para slideUp */
     @keyframes slideUp {
       from { transform: translateY(50px); opacity: 0; }
       to { transform: translateY(0); opacity: 1; }
     }
 
+    /* Botón estilo general */
     .btn {
       background: #1b4965;
       color: white;
@@ -141,11 +153,13 @@
 </head>
 <body>
 
+  <!-- Encabezado principal con nombre y descripción -->
   <header>
     <h1>Jorge Estiben Walteros Espinosa</h1>
     <p>Técnico en Sistemas | Desarrollador en formación</p>
   </header>
 
+  <!-- Barra de navegación -->
   <nav>
     <a href="#sobre-mi">Sobre mí</a>
     <a href="#proyectos">Proyectos</a>
@@ -153,6 +167,7 @@
     <a href="#contacto">Contacto</a>
   </nav>
 
+  <!-- Sección Sobre mí -->
   <section id="sobre-mi">
     <h2>Sobre mí</h2>
     <p>
@@ -162,9 +177,11 @@
     </p>
   </section>
 
+  <!-- Sección Proyectos -->
   <section id="proyectos">
     <h2>Proyectos</h2>
     <div class="tarjetas">
+      <!-- Tarjeta individual -->
       <div class="card">
         <h3>📟 Calculadora Basica</h3>
         <p>Aplicación simple en Java que permite realizar operaciones matematicas basicas.</p>
@@ -180,6 +197,7 @@
     </div>
   </section>
 
+  <!-- Sección Habilidades -->
   <section id="habilidades">
     <h2>Habilidades</h2>
     <div class="tarjetas">
@@ -190,17 +208,21 @@
     </div>
   </section>
 
+  <!-- Sección Contacto -->
   <section id="contacto">
     <h2>Contacto</h2>
     <p>Puedes contactarme para prácticas o colaboraciones:</p>
     <p>📧 <a href="mailto:stewalesp@gmail.com" style="color:#7d7f85; font-weight:600;">stewalesp@gmail.com</a></p>
     <p>📱 3249394174</p>
+    <!-- Botón que abre el CV en PDF -->
     <button class="btn" onclick="window.open('CV_JSW.pdf', '_blank')">Ver mi CV</button>
   </section>
 
+  <!-- Pie de página -->
   <footer>
     <p>© 2025 Jorge Estiben Walteros Espinosa — Portafolio Interactivo</p>
   </footer>
 
 </body>
 </html>
+
