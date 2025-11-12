@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -225,4 +226,288 @@
 
 </body>
 </html>
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" /> <!-- Define la codificación de caracteres del documento -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Hace que la página sea responsiva en dispositivos móviles -->
+  <title>Portafolio - Jorge Estiben Walteros Espinosa</title> <!-- Título de la pestaña del navegador -->
+
+  <style>
+    /* Importa la fuente Poppins desde Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+    
+    /* Reset básico para todos los elementos */
+    * {
+
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box; /* Incluye padding y border dentro del ancho y alto */
+    }
+
+    /* Estilos generales del body */
+    /*body {
+      font-family: 'Poppins', sans-serif; /* Fuente principal */
+      /*background: linear-gradient(135deg, #1b263b, #415a77);/* /* Fondo degradado */
+      /*background: image("6016294");
+      color: #e0e1dd; /* Color de texto principal */
+      /*overflow-x: hidden; /* Evita scroll horizontal */
+    /*}*/
+    
+body {
+  font-family: 'Poppins', sans-serif; /* Fuente principal */
+  /* background: linear-gradient(135deg, #1b263b, #415a77); */ /* Fondo degradado (opcional) */
+  background-image: url("fondo.png"); /* Usa la ruta o nombre real del archivo */
+  background-size: cover; /* La imagen cubre toda la pantalla */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que se repita */
+  color: #e0e1dd; /* Color de texto principal */
+  overflow-x: hidden; /* Evita scroll horizontal */
+}
+
+
+    /* Estilos del encabezado principal */
+    header {
+      text-align: center;
+      padding: 80px 20px; /* Espaciado interno */
+      animation: fadeIn 1.5s ease; /* Animación de aparición */
+    }
+
+    header h1 {
+      font-size: 2.8em; /* Tamaño del título */
+      margin-bottom: 10px;
+      color: #ffffff; /* Color del título */
+    }
+
+    header p {
+      color: #a9bcd0; /* Color del subtítulo */
+      font-size: 1.1em;
+    }
+
+    /* Estilos del menú de navegación */
+    nav {
+      background: rgba(0, 0, 0, 0.3); /* Fondo semitransparente */
+      text-align: center;
+      padding: 10px 0;
+      position: sticky; /* Permanece visible al hacer scroll */
+      top: 0;
+      z-index: 10; /* Para que esté sobre otros elementos */
+      backdrop-filter: blur(6px); /* Efecto de desenfoque del fondo */
+    }
+
+    nav a {
+      color: #e0e1dd; /* Color de enlaces */
+      text-decoration: none; /* Sin subrayado */
+      margin: 0 15px; /* Espaciado entre enlaces */
+      font-weight: 500;
+      transition: color 0.3s; /* Animación al cambiar color */
+    }
+
+    nav a:hover {
+      color: #a9bcd0; /* Color al pasar el mouse */
+    }
+
+    /* Estilos generales de las secciones */
+    
+    section {
+      max-width: 1100px; /* Máximo ancho */
+      margin: 60px auto; /* Centrado horizontal y margen superior/inferior */
+      padding: 0 20px; /* Padding lateral */
+      /*animation: slideUp 1s ease; /* Animación de subida al aparecer */
+      animation: fadeInUp 1.5s ease; /* Animación de aparición */
+    }
+
+    h2 {
+      border-left: 5px solid #1b4965; /* Línea decorativa a la izquierda */
+      padding-left: 10px; 
+      color: #f6f9fa; 
+      margin-bottom: 20px; 
+    }
+
+    /* Grid para las tarjetas */
+    .tarjetas {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajusta el número de columnas según el ancho disponible */
+      gap: 25px; /* Espacio entre tarjetas */
+    }
+
+    /* Estilos de cada tarjeta */
+    .card {
+      background: #e0e1dd; /* Fondo de la tarjeta */
+      color: #1b263b; /* Color del texto */
+      border-radius: 15px; /* Bordes redondeados */
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Sombra */
+      transition: transform 0.3s, box-shadow 0.3s; /* Animación al hacer hover */
+    }
+
+    .card:hover {
+      transform: translateY(-10px); /* Levanta la tarjeta al pasar el mouse */
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4); /* Sombra más grande */
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: #1b4965; 
+    }
+
+    .card p {
+      color: #333; 
+      font-size: 0.95em;
+    }
+
+    /* Estilos del pie de página */
+    footer {
+      background: rgba(0, 0, 0, 0.3);
+      text-align: center;
+      padding: 30px;
+      color: #a9bcd0;
+      font-size: 0.9em;
+    }
+
+    /* Animación para fadeIn */
+    @keyframes fadeInUP {
+      from { opacity: 0; transform: translateY(30px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+
+    /* Animación para slideUp */
+    @keyframes slideUp {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Botón estilo general */
+    .btn {
+      background: #0d81c8;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s;
+      
+    }
+
+    .btn:hover {
+      background: #415a77;
+      transform: translateY(-3px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    .card .btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #0078d7; /* color azul profesional */
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    }
+
+    .card .btn:hover {
+    background-color: #10476f; /* tono más oscuro al pasar el mouse */
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    
+  </style>
+</head>
+<body>
+
+  <!-- Encabezado principal con nombre y descripción -->
+  <header>
+    <h1>Jorge Estiben Walteros Espinosa</h1>
+    <p>Técnico en Sistemas | Desarrollador en formación</p>
+  </header>
+
+  <!-- Barra de navegación -->
+  <nav>
+    <a href="#sobre-mi">Sobre mí</a>
+    <a href="#proyectos">Proyectos</a>
+    <a href="#habilidades">Habilidades</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <!-- Sección Sobre mí -->
+  <section id="sobre-mi">
+    <h2>Sobre mí</h2>
+    <p>
+      Soy un estudiante de Técnico en Sistemas, cuento tambien con 6 semestres de ingenieria electronica, con pasión por la tecnología y el desarrollo web. 
+      Disfruto crear soluciones digitales que combinan funcionalidad y diseño atractivo. 
+      Busco fortalecer mis conocimientos en redes, mantenimiento y programación a través de la práctica y la experiencia profesional.
+    </p>
+  </section>
+
+  <!-- Sección Proyectos -->
+  <section id="proyectos">
+    <h2>Proyectos</h2>
+    <div class="tarjetas">
+      <!-- Tarjeta individual -->
+      <div class="card">
+        <h3>📟 Calculadora Basica</h3>
+        <p>Aplicación simple en Java que permite realizar operaciones matematicas basicas.</p>
+      </div>
+      <div class="card">
+        <h3>💻 Página Web Personal</h3>
+        <p>Desarrollo de sitio web con HTML, CSS y JavaScript, combinando estilo minimalista e interactividad.</p>
+      </div>
+      <div class="card">
+        <h3>🧰 Mantenimiento de Equipos</h3>
+        <p>Proyecto práctico de diagnóstico, formateo y optimización de computadores de escritorio.</p>
+      </div>
+      <div class="card">
+        <h3>🌐 Configuración de Redes</h3>
+        <p>Implementación de redes LAN y configuración de dispositivos para mejorar la conectividad.</p>
+      </div>
+      <div class="card">
+         <h3>🤖 Reconocimiento Facial y de Manos</h3>
+        <p>Desarrollé un programa en <strong>Python</strong> capaz de detectar rostros y manos en tiempo real utilizando bibliotecas como <strong>OpenCV</strong> y <strong>Mediapipe</strong>. Este sistema puede aplicarse en control de acceso, seguridad y gestos interactivos.</p>
+      </div>
+      <div class="card">
+        <h3>🖼 Proyecto Galería de Imágenes</h3>
+        <p>Sitio web creado con HTML, CSS y JavaScript que muestra una galería interactiva y visualmente atractiva para
+          explorar imágenes.</p>
+        <a href="https://stevenw26dev.github.io/Galley/" target="_blank" class="btn">Ver Proyecto</a>
+      </div>
+
+      
+    </div>
+  </section>
+
+  <!-- Sección Habilidades -->
+  <section id="habilidades">
+    <h2>Habilidades</h2>
+    <div class="tarjetas">
+      <div class="card"><h3>HTML & CSS</h3><p>Estructura y diseño de páginas web modernas.</p></div>
+      <div class="card"><h3>JavaScript</h3><p>Interactividad y funcionalidades dinámicas en la web.</p></div>
+      <div class="card"><h3>Java</h3><p>Desarrollo de aplicaciones básicas orientadas a objetos.</p></div>
+      <div class="card"><h3>Redes & Mantenimiento</h3><p>Configuración, mantenimiento y soporte técnico.</p></div>
+    </div>
+  </section>
+
+  <!-- Sección Contacto -->
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p>Puedes contactarme para prácticas o colaboraciones:</p>
+    <p>📧 <a href="mailto:stewalesp@gmail.com" style="color:#b7b9bd; font-weight:600;">stewalesp@gmail.com</a></p>
+    <p>📱 3249394174</p>
+    <!-- Botón que abre el CV en PDF -->
+    <button class="btn" onclick="window.open('CV_JSW.pdf', '_blank')">Ver mi CV</button>
+  </section>
+
+  <!-- Pie de página -->
+  <footer>
+    <p>© 2025 Jorge Estiben Walteros Espinosa — Portafolio</p>
+  </footer>
+
+</body>
+</html>
+
 
